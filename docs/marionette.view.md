@@ -12,9 +12,9 @@ Note: Since Marionette v3.x, `Marionette.View` will replace `Marionette.LayoutVi
 
 ## Documentation Index
 
-* [View render](#view-render)
+* [View render](#rendering)
 * [Rendering A Collection In A View](#rendering-a-collection-in-a-view)
-* [Template-less View](#template-less-view)
+* [Template-less View](#templateless-view)
 * [Events and Callback Methods](#events-and-callback-methods)
   * ["before:render" / onBeforeRender event](#beforerender--onbeforerender-event)
   * ["render" / onRender event](#render--onrender-event)
