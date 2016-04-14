@@ -2,21 +2,25 @@
 
 # Marionette.View
 
-An `View` is a view that, most of the time, represents a single item. That item may be a`Backbone.Model` or may be a `Backbone.Collection`. Whichever it is though, itwill be treated as a single item. It’s also possible to create Views that do not represent items, but just contain regions (which can be filled with View elements as well).View extends directly from `Backbone.View`, which means you’re free to use Backbone’s methods in your Marionette Views.
+A `View` is a view that, most of the time, represents a single item. That item may be a
+`Backbone.Model` or may be a `Backbone.Collection`. Whichever it is though, it
+will be treated as a single item. It’s also possible to create Views that do not represent items, but just contain regions (which can be filled with View elements as well).
+
+View extends directly from `Backbone.View`, which means you’re free to use Backbone’s methods in your Marionette Views.
 
 Note: Since Marionette v3.x, `Marionette.View` will replace `Marionette.LayoutView` and `Marionette.ItemView`.
 
 ## Documentation Index
 
-* [View render](#itemview-render)
-* [Rendering A Collection In An View](#rendering-a-collection-in-an-itemview)
-* [Template-less View](#template-less-itemview)
+* [View render](#view-render)
+* [Rendering A Collection In A View](#rendering-a-collection-in-a-view)
+* [Template-less View](#template-less-view)
 * [Events and Callback Methods](#events-and-callback-methods)
   * ["before:render" / onBeforeRender event](#beforerender--onbeforerender-event)
   * ["render" / onRender event](#render--onrender-event)
   * ["before:destroy" / onBeforeDestroy event](#beforedestroy--onbeforedestroy-event)
   * ["destroy" / onDestroy event](#destroy--ondestroy-event)
-* [View serializeData](#itemview-serializedata)
+* [View serializeData](#view-serializedata)
 * [Organizing ui elements](#organizing-ui-elements)
 * [modelEvents and collectionEvents](#modelevents-and-collectionevents)
 
@@ -54,7 +58,7 @@ let MyView = new Marionette.View({
 new MyView().render();
 ```
 
-2) A function taking a single argument: the object returned by [View.serializeData](#itemview-serializedata). 
+2) A function taking a single argument: the object returned by [View.serializeData](#view-serializedata). 
 
 Using a template function allows passing custom arguments into the `_.template` function and allows for more control over how the `_.template` function is called.
 
@@ -77,7 +81,7 @@ For more information on the _.template function see the [Underscore docs](http:/
 
 #### Templateless views
 
-An `View` can be attached to existing elements as well. The primary benefit of this is to attach behavior and events to static content that has been rendered by your server (typically for SEO purposes). To set up a template-less `View`, your `template` attribute must be `false`.
+A `View` can be attached to existing elements as well. The primary benefit of this is to attach behavior and events to static content that has been rendered by your server (typically for SEO purposes). To set up a template-less `View`, your `template` attribute must be `false`.
 
 ```html
 <div id="my-element">
@@ -115,7 +119,7 @@ view.ui.button.trigger('click'); // logs 'I clicked the button!'
 
 Another use case is when you want to attach a `Marionette.View` to a SVG graphic or canvas element, to provide a uniform view layer interface to non-standard DOM nodes. By not having a template this allows you to also use a view on pre-rendered DOM nodes, such as complex graphic elements.
 
-## Rendering A Collection In An View
+## Rendering A Collection In A View
 
 The most common way to render a Backbone.Collection is to use
 a `CollectionView`. If you just need to render a
@@ -164,7 +168,7 @@ otherwise interacted with, see the blog post on
 ## Events and Callback Methods
 
 There are several events and callback methods that are called
-for an View. These events and methods are triggered with the
+for a View. These events and methods are triggered with the
 [Marionette.triggerMethod](./marionette.functions.md#marionettetriggermethod) function, which
 triggers the event and a corresponding "on{EventName}" method.
 
@@ -473,8 +477,8 @@ var ParentView = Marionette.View.extend({
 This method is used to convert a View's `model` or `collection`
 into a usable form for a template.
 
-Item Views are called such because they process only a single item
-at a time. Consequently, only the `model` **or** the `collection` will
+Views process only a single item at a time. Consequently, 
+only the `model` **or** the `collection` will
 be serialized. If both exist, only the `model` will be serialized.
 
 By default, models are serialized by cloning the attributes of the model.
